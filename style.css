@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+.options {
+  display: inline-block;
+  font-family: calibri;
+}
+.body {
+  color: #eee;
+  background-color: #222;
+  /* background-color: #60b347; */
+}
+
+.header {
+  text-align: center;
+}
+.heading {
+  display: inline-block;
+  text-align: center;
+  font-family: calibri;
+}
+
+#titletextbox {
+  width: 90%;
+}
+
+#output-slug {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#generate-button {
+  width: 60%;
+  text-align: center;
+  outline: none;
+  box-shadow: none;
+}

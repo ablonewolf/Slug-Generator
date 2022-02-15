@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Slug Generator</title>
+  </head>
+  <body class="body">
+    <header style="text-align: center">
+      <h1 class="heading py-3 font-weight-bold">Slug Generator</h1>
+      <h5 class="header mx-5 my-4 font-weight-bold">
+        Enter Title text to slug.
+      </h5>
+    </header>
+    <main>
+      <div class="mx-5 my-4" style="text-align: center">
+        <input
+          type="text"
+          id="titletextbox"
+          placeholder="Enter the title here."
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="options mx-5">
+        <div class="btn-group btn-group-toggle d-inline ml-3">
+          <label class="dashbutton btn btn-primary ml-5">
+            <input
+              type="radio"
+              name="dashbutton"
+              id="dashbuttoninput"
+              autocomplete="off"
+            />
+            Separate with dash(-)
+          </label>
+          <label class="underscorebutton btn btn-primary mr-5">
+            <input
+              type="radio"
+              name="underscorebutton"
+              id="underscorebuttoninput"
+              autocomplete="off"
+            />
+            Separate with Underscore(_)
+          </label>
+        </div>
+        <div class="d-inline mx-5" style="float: right">
+          <input type="checkbox" id="withoutdigit" />
+          <label for="withoutdigit">Without Digits</label>
+        </div>
+      </div>
+      <div class="output-zone my-5">
+        <div style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg btn-inline"
+            id="generate-button"
+          >
+            Generate Slug
+          </button>
+        </div>
+        <div style="text-align: center">
+          <label class="mt-5 mx-5" for="output-slug" style="display: block"
+            >Output Slug</label
+          >
+          <textarea
+            class="mx-5"
+            id="output-slug"
+            name="output-slug"
+            rows="1"
+            cols="120"
+            style="display: none"
+          >
+          </textarea>
+        </div>
+        <div style="text-align: center">
+          <button
+            type="button"
+            class="my-5 btn btn-success btn-lg btn-inline"
+            id="copy-button"
+          >
+            Copy the Text
+          </button>
+        </div>
+      </div>
+      <div class="reset & clear buttons">
+        <div style="text-align: right" class="mx-5">
+          <button type="button" class="btn btn-outline-light" id="clear">
+            Clear
+          </button>
+          <button type="button" class="btn btn-outline-light mr-5" id="reset">
+            Reset
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
