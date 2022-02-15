@@ -13,6 +13,7 @@ const UnderscoreButton = document.querySelector(".underscorebutton");
 const ClearButton = document.querySelector("#clear");
 const ResetButton = document.querySelector("#reset");
 
+const OutputZone = document.querySelector("#outputzone");
 const OutputTextArea = document.querySelector("#output-slug");
 const DigitButton = document.querySelector("#withoutdigit");
 const copybutton = document.querySelector("#copy-button");
@@ -23,7 +24,9 @@ const init = function () {
   inputText.value = "";
   wordlist = [];
   output = "";
-  OutputTextArea.style.display = "none";
+  OutputZone.style.display = "none";
+  //   OutputTextArea.style.display = "none";
+  //   copybutton.style.display = "none";
   OutputTextArea.textContent = "";
   dashbutton_state = false;
   underscorebutton_state = false;
@@ -65,6 +68,7 @@ const showOutput = function () {
   if (underscorebutton_state) {
     output = underscoreformatting();
   }
+  OutputZone.style.display = "block";
   OutputTextArea.textContent = output;
   OutputTextArea.style.display = "inline-block";
 };
