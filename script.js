@@ -137,8 +137,10 @@ GenerateButton.addEventListener("click", function () {
 ClearButton.addEventListener("click", function () {
   inputText.value = "";
   OutputTextArea.textContent = "";
-  changeButton(DashButton, false);
-  changeButton(UnderscoreButton, false);
+  dashbutton_state = false;
+  underscorebutton_state = false;
+  changeButton(DashButton, dashbutton_state);
+  changeButton(UnderscoreButton, underscorebutton_state);
 });
 
 // button handler to reset everything
