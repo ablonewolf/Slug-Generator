@@ -75,8 +75,8 @@ const showOutput = function () {
 init();
 
 // function to highlight change in button
-const changeButton = function (Button, buttonstate) {
-    if (buttonstate) {
+const changeButton = function (Button, buttonState) {
+    if (buttonState) {
         Button.classList.remove("btn-primary");
         Button.classList.add("btn-secondary");
     } else {
