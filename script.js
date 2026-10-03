@@ -111,9 +111,7 @@ UnderscoreButton.addEventListener("click", function () {
 
 // button handler to check whether the user wants digit or not in the output string, the radio button
 DigitButton.addEventListener("click", function () {
-    if (DigitButton.checked) {
-        withoutdigits = true;
-    } else withoutdigits = false;
+    withoutdigits = !!DigitButton.checked;
 });
 
 // button handler to generate slug
