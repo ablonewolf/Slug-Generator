@@ -36,7 +36,7 @@ const init = function () {
 };
 
 // function to remove numeric values from the array
-const removedigits = function () {
+const removeDigits = function () {
     for (const w of wordlist) {
         if (!isNaN(w)) {
             const index = wordlist.indexOf(w);
@@ -48,7 +48,7 @@ const removedigits = function () {
 // function to format the string with dash
 const dashFormatting = function () {
     if (withoutDigits) {
-        removedigits();
+        removeDigits();
     }
     return wordlist.join("-");
 };
@@ -56,7 +56,7 @@ const dashFormatting = function () {
 // function to format the string with underscore
 const underscoreFormatting = function () {
     if (withoutDigits) {
-        removedigits();
+        removeDigits();
     }
     return wordlist.join("_");
 };
