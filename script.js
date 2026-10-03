@@ -1,10 +1,10 @@
 "use strict";
-let dashbutton_state;
-let underscorebutton_state;
-var input;
-var wordlist = [];
-let withoutdigits;
-var output;
+let dashButtonState;
+let underscoreButtonState;
+let input;
+let wordlist = [];
+let withoutDigits;
+let output;
 const inputText = document.querySelector("#titletextbox");
 const GenerateButton = document.querySelector("#generate-button");
 const DashButton = document.querySelector(".dashbutton");
@@ -16,7 +16,7 @@ const ResetButton = document.querySelector("#reset");
 const OutputZone = document.querySelector("#outputzone");
 const OutputTextArea = document.querySelector("#output-slug");
 const DigitButton = document.querySelector("#withoutdigit");
-const copybutton = document.querySelector("#copy-button");
+const copyButton = document.querySelector("#copy-button");
 
 // function to prepare for the initial stage
 const init = function () {
@@ -28,9 +28,9 @@ const init = function () {
     //   OutputTextArea.style.display = "none";
     //   copybutton.style.display = "none";
     OutputTextArea.textContent = "";
-    dashbutton_state = false;
-    underscorebutton_state = false;
-    withoutdigits = false;
+    dashButtonState = false;
+    underscoreButtonState = false;
+    withoutDigits = false;
     DashButton.classList.remove("active");
     UnderscoreButton.classList.remove("active");
 };
@@ -46,27 +46,27 @@ const removedigits = function () {
     console.log(wordlist);
 };
 // function to format the string with dash
-const dashformatting = function () {
-    if (withoutdigits) {
+const dashFormatting = function () {
+    if (withoutDigits) {
         removedigits();
     }
     return wordlist.join("-");
 };
 
 // function to format the string with underscore
-const underscoreformatting = function () {
-    if (withoutdigits) {
+const underscoreFormatting = function () {
+    if (withoutDigits) {
         removedigits();
     }
     return wordlist.join("_");
 };
 // function to show the output string
 const showOutput = function () {
-    if (dashbutton_state) {
-        output = dashformatting();
+    if (dashButtonState) {
+        output = dashFormatting();
     }
-    if (underscorebutton_state) {
-        output = underscoreformatting();
+    if (underscoreButtonState) {
+        output = underscoreFormatting();
     }
     OutputZone.style.display = "block";
     OutputTextArea.textContent = output;
@@ -86,32 +86,32 @@ const changeButton = function (Button, buttonstate) {
 };
 // dash button handler
 DashButton.addEventListener("click", function () {
-    dashbutton_state = true;
-    underscorebutton_state = false;
+    dashButtonState = true;
+    underscoreButtonState = false;
     //   console.log(DashButton.classList);
     DashButton.classList.add("active");
-    changeButton(DashButton, dashbutton_state);
+    changeButton(DashButton, dashButtonState);
     if (UnderscoreButton.classList.contains("active")) {
         UnderscoreButton.classList.remove("active");
     }
-    changeButton(UnderscoreButton, underscorebutton_state);
+    changeButton(UnderscoreButton, underscoreButtonState);
 });
 
 // underscore button handler
 UnderscoreButton.addEventListener("click", function () {
-    dashbutton_state = false;
-    underscorebutton_state = true;
+    dashButtonState = false;
+    underscoreButtonState = true;
     UnderscoreButton.classList.add("active");
-    changeButton(UnderscoreButton, underscorebutton_state);
+    changeButton(UnderscoreButton, underscoreButtonState);
     if (DashButton.classList.contains("active")) {
         DashButton.classList.remove("active");
     }
-    changeButton(DashButton, dashbutton_state);
+    changeButton(DashButton, dashButtonState);
 });
 
 // button handler to check whether the user wants digit or not in the output string, the radio button
 DigitButton.addEventListener("click", function () {
-    withoutdigits = !!DigitButton.checked;
+    withoutDigits = !!DigitButton.checked;
 });
 
 // button handler to generate slug
@@ -121,7 +121,7 @@ GenerateButton.addEventListener("click", function () {
         window.alert("You have not entered anything yet in the input field.");
     } else {
         wordlist = input.split(" ");
-        if (dashbutton_state || underscorebutton_state) {
+        if (dashButtonState || underscoreButtonState) {
             showOutput();
         } else {
             window.alert(
@@ -135,10 +135,10 @@ GenerateButton.addEventListener("click", function () {
 ClearButton.addEventListener("click", function () {
     inputText.value = "";
     OutputTextArea.textContent = "";
-    dashbutton_state = false;
-    underscorebutton_state = false;
-    changeButton(DashButton, dashbutton_state);
-    changeButton(UnderscoreButton, underscorebutton_state);
+    dashButtonState = false;
+    underscoreButtonState = false;
+    changeButton(DashButton, dashButtonState);
+    changeButton(UnderscoreButton, underscoreButtonState);
 });
 
 // button handler to reset everything
@@ -147,13 +147,13 @@ ResetButton.addEventListener("click", function () {
     inputText.value = "";
     OutputTextArea.textContent = "";
     DigitButton.checked = false;
-    changeButton(DashButton, dashbutton_state);
-    changeButton(UnderscoreButton, underscorebutton_state);
+    changeButton(DashButton, dashButtonState);
+    changeButton(UnderscoreButton, underscoreButtonState);
 });
 
 // button handler to copy the output slug
 
-copybutton.addEventListener("click", function () {
+copyButton.addEventListener("click", function () {
     let copytext = OutputTextArea.value;
     //   console.log(copytext);
     if (copytext === "") {
